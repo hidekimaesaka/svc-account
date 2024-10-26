@@ -78,3 +78,24 @@ def populated_repo(database):
     new_repo.persist_svc_account(svc_account_2)
 
     return new_repo
+
+
+@fixture
+def sa_service_populated(populated_repo):
+    service = SAService()
+    service.repo = populated_repo
+    return service
+
+
+@fixture
+def svc_account_dict():
+
+    svc_account = {
+        "id": 1,
+        "sa_name_1": "bababa",
+        "sa_name_2": "bobobo",
+        "last_update_date": datetime.now(),
+        "expiration_date": datetime.now()
+    }
+
+    return svc_account

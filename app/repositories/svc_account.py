@@ -44,4 +44,4 @@ class SARepository:
             session.delete(svc_account)
             session.commit()
 
-            return svc_account
+            return True
